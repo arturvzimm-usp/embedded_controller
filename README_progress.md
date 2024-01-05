@@ -1,9 +1,13 @@
 # Integrantes do Grupo e Contribuições
 
 Artur Vinícius Ilha Zimmermann (Documentação em Github)
+
 Beatriz Ferreira de Oliveira Mendonça (Desenvolvimento dos códigos e implementação em hardware)
+
 Luiz Felipe Sanches Azevedo (Desenvolvimento dos códigos e implementação em hardware)
+
 Murilo Bisterzo Crepaldi (Desenvolvimento dos códigos e implementação em hardware)
+
 Pablo Pereira Guelssi (Desenvolvimento dos códigos e implementação em hardware)
 
 # Progresso do Grupo
@@ -37,10 +41,18 @@ Na sequência, o grupo consultou o datasheet da placa para aprender a operar as 
 ![alt text](./docs/progress_img/15.jpeg)
 ![alt text](./docs/progress_img/16.jpeg)
 
-Isto possibilitou fazer o controle de luminosidade de um LED. Para verificar este sinal de PWM imprimido pela linha de comando em Linux, foi conectado um osciloscópio ao pino de saída. Assim, o grupo foi variando os valores de PWM na máquina e observando o osciloscópio para verificar se a saída estava correspondendo aos valores impostos.
+Para verificar este sinal de PWM imprimido pela linha de comando em Linux, foi conectado um osciloscópio ao pino de saída. Assim, o grupo foi variando os valores de PWM na máquina e observando o osciloscópio para verificar se a saída estava correspondendo aos valores impostos.
 
 ![alt text](./docs/progress_img/08.jpeg)
+
+Na sequência, a partir do código de LED fornecido em aula pelo professor, o grupo construiu um código a ser executado na placa que, basicamente, cria uma saida PWM para o hardware embarcado Toradex VF50 + Carrier Board Viola e imprime um valor PWM nesta saída "repetindo" os procedimentos anteriormente descritos sem a necessidade de repetir toda intervenção manual realizada anteriormente.
+
+Foram encontrados alguns problemas relacionados ao uso de dockers e containers pois a placa utilizada não possuía memória suficiente para utilizar estes recursos. Para contornar este problema, o grupo concluiu, junto ao professor, a necessidade de utilizar um código direto.
+
+Até aqui, o código desenvolvido imprimia um valor de PWM na saída que permanecia o mesmo (src/v13_code.c). Assim, foi implementada uma interface interativa com o usuário que permitisse para ele controlar o "duty cicle" (tempo que o PWM permanece em nível 1) o que permite controldar a luminosidade do LED (src/v14_code.c). Isto seria o equivalente a controlar a velocidade do motor, não foi possível testar o mesmo no motor devido aos integrantes do grupo não estarem mais em São Carlos após o término do progresso aqui descrito.
+
 ![alt text](./docs/progress_img/17.jpeg)
-![alt text](./docs/progress_img/18.mp4)
 
+O vídeo do LED sendo controlado encontra-se na pasta de docs/progress_img.
 
+Além disso, o professor contribuiu com um código com algumas melhorias a partir de feedbacks próprios (src/vglauco_code.c).
